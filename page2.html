@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맵</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="shortcut icon" type="image/png" href="./img/파비콘.ico">
+</head>
+<body>
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="./img/라이엇 로고.png" alt="" class="logo">
+            <img src="./img/발로란트 네비용.png" alt="" class="logo3">
+            <div class="navbar-menu">
+                <a href="#">게임 정보</a>
+                <a href="#">미디어</a>
+                <a href="#">소식</a>
+                <a href="#">발로란트 과거 회상</a>
+                <a href="#">고객지원</a>
+                <a href="#">이벤트</a>
+                <a href="#">소셜 미디어</a>
+                <a href="#">E-스포츠</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="#" class="icon"><img src="./img/돋보기.png" alt="검색" /></a>
+            <a href="#" class="icon2"><img src="./img/지구본 아이콘.png" alt="계정" /></a>
+            <button class="play-button">지금 플레이하기</button>
+        </div>
+    </div>
+    <!-- 맵 그리드 -->
+    <div class="maps-container">
+        <h1>맵</h1>
+        <p>발로란트의 맵들을 통해 다양한 전투 스타일을 경험하고, 각기 다른 전술을 펼쳐보세요.</p>
+        <div class="maps-grid">
+            <div class="map-item" data-map="lotus">
+                <img src="./map/로투스.png" alt="로터스">
+                <span>로터스</span>
+            </div>
+            <div class="map-item" data-map="bind">
+                <img src="./map/바인드.png" alt="바인드">
+                <span>바인드</span>
+            </div>
+            <div class="map-item" data-map="breeze">
+                <img src="./map/브리즈.png" alt="브리즈">
+                <span>브리즈</span>
+            </div>
+            <div class="map-item" data-map="sunset">
+                <img src="./map/선셋.png" alt="선셋">
+                <span>선셋</span>
+            </div>
+            <div class="map-item" data-map="split">
+                <img src="./map/스플릿.png" alt="스플릿">
+                <span>스플릿</span>
+            </div>
+            <div class="map-item" data-map="icebox">
+                <img src="./map/아이스박스.png" alt="아이스박스">
+                <span>아이스박스</span>
+            </div>
+            <div class="map-item" data-map="abyss">
+                <img src="./map/어비스.png" alt="어비스">
+                <span>어비스</span>
+            </div>
+            <div class="map-item" data-map="ascent">
+                <img src="./map/어센트.png" alt="어센트">
+                <span>어센트</span>
+            </div>
+            <div class="map-item" data-map="pearl">
+                <img src="./map/펄.png" alt="펄">
+                <span>펄</span>
+            </div>
+            <div class="map-item" data-map="fracture">
+                <img src="./map/프랙처.png" alt="프랙처">
+                <span>프랙처</span>
+            </div>
+            <div class="map-item" data-map="haven">
+                <img src="./map/헤이븐.png" alt="헤이븐">
+                <span>헤이븐</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 -->
+    <div class="modal" id="mapModal">
+        <div class="modal-content">
+            <div class="main-content">
+                <div class="slider-container">
+                    <span class="close-button">&times;</span>
+                    <div class="slider">
+                        <!-- 슬라이더 이미지는 JavaScript로 동적 추가 -->
+                    </div>
+                    <button class="slider-button prev">&#10094;</button>
+                    <button class="slider-button next">&#10095;</button>
+                </div>
+                <div class="map-info">
+                    <h2 class="map-title"></h2>
+                    <p class="map-description"></p>
+                </div>
+            </div>
+            <div class="thumbnail-nav">
+                <!-- 썸네일들은 JavaScript로 동적 추가됨 -->
+            </div>
+        </div>
+    </div>
+    <!-- container div 닫은 후, script 태그 전에 추가 -->
+<!-- 구분선 역할의 사각형 -->
+<div style="
+    width: 100%;
+    height: 100px;  /* 얇은 선 */
+    background-color: #333333;  /* 발로란트 레드 컬러 */
+    margin-top: 50px;
+    position: relative;
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    color: white; /* 글자 색상 */
+    font-size: 14px; /* 글자 크기 */
+    font-weight: bold;
+">   
+<p style="margin-right: 20px;">게임 다운로드</p> <!-- 오른쪽 여백 추가 -->
+    <p>라이엇 모바일 컴패니언 앱 다운로드</p>
+</div>
+
+<!-- 푸터 -->
+<div style="
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 30px 0;
+background-color: #111111;
+">
+<img src="./img/푸터.PNG" alt="footer" style="
+    max-width: 80%;
+    height: auto;
+    display: block;
+">
+</div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const mapData = {
+        lotus: {
+            title: '로터스',
+            description: '고대의 힘을 내뿜는 별 매개체를 간직한 신비로운 건축물입니다. 돌로 된 거대한 문은 다양한 이동 경로를 제공하며 신비로운 지점 3개로의 길을 열어줍니다.',
+            images: [
+                './map/로투스.png',
+                './map/로투스2.png',
+                './map/로투스3.png',
+                './map/로투스4.png',
+                './map/로투스5.png'
+            ]
+        },
+        bind: {
+            title: '바인드',
+            description: '두 지점으로 구성되며 중간 지점이 없어 왼쪽 또는 오른쪽을 선택해야 합니다. 양쪽 지점에는 공격팀을 위한 지름길과 한쪽으로만 이동할 수 있는 순간이동기 한 쌍이 있어 측면 공격에 활용할 수 있습니다.',
+            images: [
+                './map/바인드.png',
+                './map/바인드2.png',
+                './map/바인드3.png',
+                './map/바인드4.png',
+                './map/바인드5.png'
+            ]
+        },
+        breeze: {
+            title: '브리즈',
+            description: '열대 파라다이스의 역사적 유적과 해변 동굴의 경치를 만끽해보세요. 하지만 엄호가 필요할 겁니다. 탁 트인 넓은 공간에서 원거리 교전이 펼쳐지니까요. 측면 공격에 잘 대비한다면 승리에 한 걸음 다가갈 수 있을 것입니다.',
+            images: [
+                './map/브리즈.png',
+                './map/브리즈2.png',
+                './map/브리즈3.png',
+                './map/브리즈4.png',
+                './map/브리즈5.png'
+            ]
+        },
+        sunset: {
+            title: '선셋',
+            description: '지역 킹덤사 시설에서 발생한 사고가 도시 전체로 번지려고 합니다. 단골 푸드 트럭에서 간단히 끼니를 해결하고, 공격로가 세 개인 전통적 구성의 맵에서 도시를 누비며 전투하세요.',
+            images: [
+                './map/선셋.png',
+                './map/선셋2.png',
+                './map/선셋3.png',
+                './map/선셋4.png',
+                './map/선셋5.png'
+            ]
+        },
+        split: {
+            title: '스플릿',
+            description: '멀리 가려면 위로 이동해야 합니다. 높이 솟아오른 중앙 구역이 두 지점을 나누고 있어 줄사다리 두 개를 이용해 재빨리 움직일 수 있죠. 각 지점에는 장악에 아주 중요한 탑이 세워져 있습니다. 속수무책으로 당하지 않으려면 꼭 위쪽을 확인하세요.',
+            images: [
+                './map/스플릿.png',
+                './map/스플릿2.png',
+                './map/스플릿3.png',
+                './map/스플릿4.png',
+                './map/스플릿5.png'
+            ]
+        },
+        icebox: {
+            title: '아이스박스',
+            description: '다음 전장은 혹한 지대에 위치한 킹덤의 비밀 발굴 현장입니다. 눈과 쇠붙이로 둘러싸인 스파이크 설치 지점에서는 전후좌우로 능숙하게 교전하는 능력이 필수죠. 집라인을 이용한 기습 공격으로 적의 허를 찔러보세요.',
+            images: [
+                './map/아이스박스.png',
+                './map/아이스박스2.png',
+                './map/아이스박스3.png',
+                './map/아이스박스4.png',
+                './map/아이스박스5.png'
+            ]
+        },
+        abyss: {
+            title: '어비스',
+            description: '아슬아슬한 함정과 수직적 게임플레이로 위험한 스릴을 제공하는 5대5 스파이크 모드 맵입니다. 발밑을 조심하세요. 어비스는 발로란트 최초로 경계가 없는 맵이며 모래시계의 후예의 숨겨진 비밀 기지를 배경으로 합니다.',
+            images: [
+                './map/어비스.png',
+                './map/어비스2.png',
+                './map/어비스3.png',
+                './map/어비스4.png',
+                './map/어비스5.png'
+            ]
+        },
+        ascent: {
+            title: '어센트',
+            description: '어센트에서는 소규모 진지전과 소모전을 벌일 수 있는 개방 구역을 중심으로 두 지점이 나뉘어 있습니다. 각 지점은 해체 불가능한 폭탄 문으로 수비를 강화할 수 있으며, 일단 문이 닫히면 문을 파괴하거나 다른 길을 찾아야 합니다. 가능한 한 많은 지역을 지키세요.',
+            images: [
+                './map/어센트.png',
+                './map/어센트2.png',
+                './map/어센트3.png',
+                './map/어센트4.png',
+                './map/어센트5.png'
+            ]
+        },
+        pearl: {
+            title: '펄',
+            description: '공격팀은 역동적인 수중 도시의 2개 지점으로 나뉜 맵에서 수비팀을 압박합니다. 펄은 기계적 요소가 없는 지형 기반의 맵입니다. 협소한 중앙과 양쪽의 긴 구역으로 이루어진 오메가 지구의 첫 번째 맵에서 전투를 벌이세요.',
+            images: [
+                './map/펄.png',
+                './map/펄2.png',
+                './map/펄3.png',
+                './map/펄4.png',
+                './map/펄5.png'
+            ]
+        },
+        fracture: {
+            title: '프랙처',
+            description: '레디어나이트 실험 실패로 파괴된 일급 비밀 연구 시설입니다. 수비팀의 전략은 맵처럼 두 갈래로 나누어집니다. 공격팀의 영역에서 맞붙거나 위기에 대비하여 공격을 견디세요.',
+            images: [
+                './map/프랙처.png',
+                './map/프랙처2.png',
+                './map/프랙처3.png',
+                './map/프랙처4.png',
+                './map/프랙처5.png'
+            ]
+        },
+        haven: {
+            title: '헤이븐',
+            description: '잊혀진 수도원 아래에서 세 지점을 장악하기 위한 요원들의 전투가 활발히 벌어집니다. 장악해야 할 지역이 더 많지만, 수비팀이 추가 지역을 이용해 공격적인 압박을 가할 수 있습니다.',
+            images: [
+                './map/헤이븐.png',
+                './map/헤이븐2.png',
+                './map/헤이븐3.png',
+                './map/헤이븐4.png',
+                './map/헤이븐5.png'
+            ]
+        },
+    };
+
+    let currentSlide = 0;
+    let currentMap = '';
+
+    // 모달 열기
+    document.querySelectorAll('.map-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const mapId = this.dataset.map;
+            currentMap = mapId;
+            currentSlide = 0;
+            openModal(mapId);
+        });
+    });
+
+    // 모달 닫기
+    document.querySelector('.close-button').addEventListener('click', closeModal);
+    window.addEventListener('click', function(e) {
+        if (e.target === document.querySelector('.modal')) {
+            closeModal();
+        }
+    });
+
+    // 슬라이드 제어
+    document.querySelector('.prev').addEventListener('click', () => changeSlide(-1));
+    document.querySelector('.next').addEventListener('click', () => changeSlide(1));
+
+    function openModal(mapId) {
+        const modal = document.getElementById('mapModal');
+        const data = mapData[mapId];
+        
+        document.querySelector('.map-title').textContent = data.title;
+        document.querySelector('.map-description').textContent = data.description;
+        
+        // 썸네일 네비게이션 생성
+        const thumbnailNav = document.querySelector('.thumbnail-nav');
+        thumbnailNav.innerHTML = data.images.map((img, index) => `
+            <div class="thumbnail-btn ${index === currentSlide ? 'active' : ''}" data-index="${index}">
+                <img src="${img}" alt="썸네일 ${index + 1}">
+            </div>
+        `).join('');
+
+        // 썸네일 클릭 이벤트 추가
+        thumbnailNav.querySelectorAll('.thumbnail-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentSlide = parseInt(this.dataset.index);
+                updateSlide();
+                updateThumbnails();
+            });
+        });
+        
+        updateSlide();
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('mapModal').style.display = 'none';
+    }
+
+    function changeSlide(direction) {
+        const images = mapData[currentMap].images;
+        currentSlide = (currentSlide + direction + images.length) % images.length;
+        updateSlide();
+    }
+
+    function updateSlide() {
+        const slider = document.querySelector('.slider');
+        const images = mapData[currentMap].images;
+        slider.innerHTML = `<img src="${images[currentSlide]}" alt="맵 이미지">`;
+        updateThumbnails();
+    }
+
+    function updateThumbnails() {
+        document.querySelectorAll('.thumbnail-btn').forEach((btn, index) => {
+            if (index === currentSlide) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+});
+    </script>
+</body>
+</html>

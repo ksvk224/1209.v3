@@ -1,0 +1,348 @@
+@font-face {
+    font-family: 'Interop';
+    src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('./img/요원\ 배경.png');
+        background-color: #232a30;
+        background-repeat: no-repeat; /* 배경 반복 없애기 */
+        background-position: center center; /* 정가운데 배치 */
+        background-size: 80% auto; /* 크기를 80%로 줄이기 (필요에 따라 조절 가능) */
+        color: #ffffff;
+        font-family: 'Arial', sans-serif;
+        min-height: 100vh;
+    }
+    
+    /* 네비게이션 바 스타일 */
+    .navbar {
+        background-color: black;
+        color: white;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        font-family: 'Interop', sans-serif;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        justify-content: space-between;
+    }
+    .navbar-right {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* 아이콘들 사이 간격 */
+        margin-right: 50px;
+    }
+    .icon img {
+        width: 45px; /* 아이콘 크기 조정 */
+        height: 45px; /* 아이콘 크기 조정 */
+        border-radius: 15px;
+    }
+    
+    .icon2 img {
+        width: 18px; /* 아이콘 크기 조정 */
+        height: 18px; /* 아이콘 크기 조정 */
+    }
+    .navbar .logo3 {
+        margin-right: 20px;
+        height: 40px;
+        margin-right: 20px; /* 작은 로고와 다음 요소 간의 간격 */
+    }
+    
+    .play-button {
+        font-weight: 700;
+        background: linear-gradient(to right, #ff4655, #fa6c67);
+        color: rgb(12, 12, 12); /* 버튼 글자색 */
+        border: none; /* 테두리 제거 */
+        border-radius: 15px; /* 모서리 둥글게 */
+        padding: 10px 15px; /* 패딩 */
+        cursor: pointer; /* 커서 모양 변경 */
+        transition: background-color 0.3s; /* 배경색 변화 애니메이션 */
+    }
+    
+    .navbar .logo {
+        margin-right: 20px;
+        height: 40px;
+    }
+    
+    .navbar-menu {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-menu a {
+        text-decoration: none;
+        color: white;
+        margin: 0 20px;
+        transition: color 0.3s;
+    }
+    
+    .navbar-menu a:hover {
+        color: #ff4655;
+    }
+    
+    .navbar-menu a::after {
+        border-radius: 10px;
+        content: '▼';
+        position: absolute;
+        right: 5px;
+        font-size: 0.5em; /* 화살표 크기 조절 */
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.7; /* 투명도 조절 */
+    }
+    /* 헤더 섹션 스타일 */
+    .header-section {
+        text-align: center;
+        padding-top: 120px;
+        margin-bottom: 40px;
+    }
+    
+    .main-title {
+        font-size: 48px;
+        margin-bottom: 30px;
+        color: #f7f7f7;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+.maps-container {
+    margin-top: 60px;
+    padding: 40px;
+    text-align: center;
+}
+
+.maps-container h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.maps-container p {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.maps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.map-item {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #2a2a2a;
+}
+
+.map-item:hover {
+    background: #1d1d1d;
+    color: #ff4655;
+    transform: scale(1.05);
+}
+
+.map-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.map-item img:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 배경 */
+    opacity: 0.5; /* 초기 상태에서 보이지 않도록 설정 */
+    transition: opacity 0.3s; /* 투명도 변화에 애니메이션 추가 */
+}
+
+.map-item span {
+    display: block;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* 모달 스타일 수정 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1400px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    gap: 20px;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 600px; /* 높이 증가 */
+    margin-bottom: 20px;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 630px;
+    object-fit: cover;
+}
+
+.map-info {
+    padding: 30px 40px;
+    background: linear-gradient(to bottom, rgba(30, 30, 30, 0.9), #1e1e1e);
+    margin-top: -20px; /* 슬라이더와 겹치게 */
+}
+
+.map-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff4655;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.map-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background: rgba(61, 61, 61, 0.5); /* 반투명 검은색 배경 */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px); /* 배경 블러 효과 */
+    white-space: pre-line; /* 줄바꿈 인식 */
+}
+
+/* 썸네일 네비게이션 수정 */
+.thumbnail-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #1e1e1e;
+    height: 100%;
+    justify-content: center;
+}
+
+.thumbnail-btn {
+    width: 250px;
+    height: 150px;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.thumbnail-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-btn.active {
+    border-color: #ff4655;
+    opacity: 1;
+}
+
+.thumbnail-btn:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 슬라이더 버튼 스타일 개선 */
+.slider-button {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background: rgba(255, 70, 85, 0.2);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-button:hover {
+    background: rgba(255, 70, 85, 0.8);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* 닫기 버튼 개선 */
+.close-button {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 70, 85, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    background: rgba(255, 70, 85, 0.8);
+}
+.footer {
+    display: flex;
+    justify-content: center; /* 수평 방향으로 가운데 정렬 */
+    align-items: center; /* 수직 방향으로 가운데 정렬 */
+    width: 100%;
+    padding: 60px 0 40px;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요원</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="shortcut icon" type="image/png" href="./img/파비콘.ico">
+</head>
+<body>
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="./img/라이엇 로고.png" alt="" class="logo">
+            <img src="./img/발로란트 네비용.png" alt="" class="logo3">
+            <div class="navbar-menu">
+                <a href="#">게임 정보</a>
+                <a href="#">미디어</a>
+                <a href="#">소식</a>
+                <a href="#">발로란트 과거 회상</a>
+                <a href="#">고객지원</a>
+                <a href="#">이벤트</a>
+                <a href="#">소셜 미디어</a>
+                <a href="#">E-스포츠</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="#" class="icon"><img src="./img/돋보기.png" alt="검색" /></a>
+            <a href="#" class="icon2"><img src="./img/지구본 아이콘.png" alt="계정" /></a>
+            <button class="play-button">지금 플레이하기</button>
+        </div>
+    </div>
+
+    <div class="header-section">
+        <h1 class="main-title">요원</h1>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-role="all">전체</button>
+            <button class="filter-btn" data-role="타격대">
+                <img src="./img/타격대 로고.png" alt="아이콘" style="width: 16px; height: 16px; margin-right: 5px;">
+                타격대
+            </button>
+            <button class="filter-btn" data-role="척후대">
+                <img src="./img/척후대 로고.png" alt="아이콘" style="width: 16px; height: 16px; margin-right: 5px;">
+                척후대
+            </button>
+            <button class="filter-btn" data-role="감시자">
+                <img src="./img/감시자 로고.png" alt="아이콘" style="width: 16px; height: 16px; margin-right: 5px;">
+                감시자
+            </button>
+            <button class="filter-btn" data-role="전략가">
+                <img src="./img/전략가 로고.png" alt="아이콘" style="width: 16px; height: 16px; margin-right: 5px;">
+                전략가
+            </button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <a href="https://playvalorant.com/ko-kr/agents/gekko/" class="agent" data-role="척후대">
+            <img src="./img/게코.png" alt="게코">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/neon/" class="agent" data-role="타격대">
+            <img src="./img/네온.png" alt="네온">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/deadlock/" class="agent" data-role="감시자">
+            <img src="./img/데드록.png" alt="데드록">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/reyna/" class="agent" data-role="타격대">
+            <img src="./img/레이나.png" alt="레이나">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/raze/" class="agent" data-role="타격대">
+            <img src="./img/레이즈.png" alt="레이즈">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/vyse/" class="agent" data-role="감시자">
+            <img src="./img/바이스.png" alt="바이스">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/viper/" class="agent" data-role="전략가">
+            <img src="./img/바이퍼.png" alt="바이퍼">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/breach/" class="agent" data-role="척후대">
+            <img src="./img/브리치.png" alt="브리치">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/brimstone/" class="agent" data-role="전략가">
+            <img src="./img/브림스톤.png" alt="브림스톤">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/cypher/" class="agent" data-role="감시자">
+            <img src="./img/사이퍼.png" alt="사이퍼">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/sage/" class="agent" data-role="감시자">
+            <img src="./img/세이지.png" alt="세이지">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/sova/" class="agent" data-role="척후대">
+            <img src="./img/소바.png" alt="소바">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/skye/" class="agent" data-role="척후대">
+            <img src="./img/스카이.png" alt="스카이">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/astra/" class="agent" data-role="전략가">
+            <img src="./img/아스트라.png" alt="아스트라">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/iso/" class="agent" data-role="타격대">
+            <img src="./img/아이소.png" alt="아이소">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/omen/" class="agent" data-role="전략가">
+            <img src="./img/오멘.png" alt="오멘">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/yoru/" class="agent" data-role="타격대">
+            <img src="./img/요루.png" alt="요루">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/jett/" class="agent" data-role="타격대">
+            <img src="./img/제트.png" alt="제트">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/chamber/" class="agent" data-role="감시자">
+            <img src="./img/체임버.png" alt="체임버">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/kay-o/" class="agent" data-role="척후대">
+            <img src="./img/케이오.png" alt="케이오">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/clove/" class="agent" data-role="전략가">
+            <img src="./img/클로브.png" alt="클로브">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/killjoy/" class="agent" data-role="감시자">
+            <img src="./img/킬조이.png" alt="킬조이">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/fade/" class="agent" data-role="척후대">
+            <img src="./img/페이드.png" alt="페이드">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/phoenix/" class="agent" data-role="타격대">
+            <img src="./img/피닉스.png" alt="피닉스">
+        </a>
+        <a href="https://playvalorant.com/ko-kr/agents/harbor/" class="agent" data-role="전략가">
+            <img src="./img/하버.png" alt="하버">
+        </a>
+    </div>
+<!-- container div 닫은 후, script 태그 전에 추가 -->
+<!-- 구분선 역할의 사각형 -->
+<div style="
+    width: 100%;
+    height: 100px;  /* 얇은 선 */
+    background-color: #333333;  /* 발로란트 레드 컬러 */
+    margin-top: 50px;
+    position: relative;
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    color: white; /* 글자 색상 */
+    font-size: 14px; /* 글자 크기 */
+    font-weight: bold;
+">   
+<p style="margin-right: 20px;">게임 다운로드</p> <!-- 오른쪽 여백 추가 -->
+    <p>라이엇 모바일 컴패니언 앱 다운로드</p>
+</div>
+
+<!-- 푸터 -->
+<div style="
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #111111;
+">
+    <img src="./img/푸터.PNG" alt="footer" style="
+        max-width: 80%;
+        height: auto;
+        display: block;
+    ">
+</div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const container = document.querySelector('.container');
+    const agents = document.querySelectorAll('.agent');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // 활성화된 버튼 스타일 변경
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            const selectedRole = this.getAttribute('data-role');
+
+            // 모든 요원을 일단 숨김
+            agents.forEach(agent => {
+                agent.style.display = 'none';
+            });
+
+            // 선택된 역할의 요원만 표시
+            let visibleAgents;
+            if (selectedRole === 'all') {
+                visibleAgents = Array.from(agents);
+            } else {
+                visibleAgents = Array.from(agents).filter(agent => 
+                    agent.getAttribute('data-role') === selectedRole
+                );
+            }
+
+            // 보이는 요원들 재정렬
+            visibleAgents.forEach((agent, index) => {
+                agent.style.display = 'block';
+                agent.style.opacity = '0';
+                agent.style.transform = 'scale(0.8)';
+                agent.style.gridRow = `${Math.floor(index / 4) + 1}`;
+                agent.style.gridColumn = `${(index % 4) + 1}`;
+                
+                // 애니메이션 효과
+                setTimeout(() => {
+                    agent.style.opacity = '1';
+                    agent.style.transform = 'scale(1)';
+                }, 50 * index);
+            });
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.custom-cursor');
+    const agents = document.querySelectorAll('.agent');
+
+    // 커서 이동 - requestAnimationFrame 사용하여 더 부드럽게
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.custom-cursor');
+    const agents = document.querySelectorAll('.agent');
+
+    // 커서 이동
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // 요원 카드에만 반응
+    agents.forEach(agent => {
+        agent.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        
+        agent.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
